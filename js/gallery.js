@@ -8,6 +8,10 @@ function activateGallery() {
   let description = galleryInfo.querySelector(".description");
 
   thumbnails.forEach(function(thumbnail){
+    // 大画像をプリロードする
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = newImageSrc;
     thumbnail.addEventListener("click", function(){
       // クリックされたサムネイル画像をメイン画像として設定する
       let newImageSrc = thumbnail.dataset.largeVersion;
